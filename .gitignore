@@ -7,3 +7,6 @@ custom
 *.swp
 !custom/example.zshcache
 cache/
+
+# Mac OS X
+.DS_Store
