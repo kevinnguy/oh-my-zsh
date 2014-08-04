@@ -28,6 +28,8 @@ h2. Setup
 
 5. Start / restart zsh (open a new terminal is easy enough...)
 
+6. Upgrade oh my zsh for the latest updates: `upgrade_oh_my_zsh`
+
 h3. Problems?
 
 You _might_ need to modify your PATH in ~/.zshrc if you're not able to find some commands after switching to _Oh My Zsh_.
