@@ -28,7 +28,7 @@ h2. Setup
 
 5. Start / restart zsh (open a new terminal is easy enough...)
 
-6. Upgrade oh my zsh for the latest updates: `upgrade_oh_my_zsh`
+6. Upgrade oh my zsh for the latest updates: @upgrade_oh_my_zsh@
 
 h3. Problems?
 
