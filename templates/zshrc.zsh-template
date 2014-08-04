@@ -47,7 +47,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails brew)
+plugins=(git rails brew pod gem xcode heroku)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,6 +84,9 @@ echoco () { echo "$ $@"; }
 
 # ls
 alias ll="echoco 'ls -ahlo'; ls -ahlo"
+alias lld="echoco 'ls -adhlo */'; ls -adhlo */"
+alias llr="echoco 'ls -ahloR'; ls -ahloR"
+alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 
 # use option-left and right to move word to word
 bindkey -e
@@ -92,6 +95,25 @@ bindkey '\e\e[D' backward-word
 
 # git
 alias gb="echoco 'git branch -a'; git branch -a"
-alias gs="echoco 'git status -bs'; git status -bs"
-alias gl="echoco 'git log --all --graph --abbrev-commit --date=relative'; git log --all --graph --abbrev-commit --date=relative"
+alias gs="echoco 'git status'; git status"
+alias gd="echoco 'git diff --abbrev-commit --oneline -U1'; git diff --abbrev-commit --oneline -U1"
+alias gds="echoco 'git diff --abbrev-commit --oneline -U1 --cached'; git diff --abbrev-commit --oneline -U1 --cached"
+alias gl="echoco 'tig --all'; tig --all"
+
+# jekyll
+alias jks="echoco 'jekyll serve -w'; jekyll serve -w"
+jkp () {echoco 'cd ~/kevinnguy.github.com'; echoco 'rake post title="Your Post Title"'; cd ~/kevinnguy.github.com && rake post title=$@}
+
+# screen saver
+away () {defaults -currentHost write com.apple.ScreenSaver.Basic MESSAGE $@; open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app}
+
+
+
+
+
+
+
+
+
+
 
