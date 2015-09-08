@@ -8,9 +8,15 @@ rbenv_version() {
   rbenv version 2>/dev/null | awk '{print $1}'
 }
 
+EMOJI=(💩 🐦 🚀 🐞 🎨 🍕 🐭 👽 ☕️ 🔬 💀 🐷 🐼 🐶 🐸 🐧 🐳 🍔 🍣 🍻 🔮 💰 💎 💾 💜 🍪 🌞 🌍 🐌 🐓 🍄 )
+
+function random_emoji {
+  echo -n "$EMOJI[$RANDOM%$#EMOJI+1]"
+}
+
 PROMPT='
 %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) ⌚ %{$fg_bold[red]%}%*%{$reset_color%}
-$ '
+$(random_emoji)  '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}⭠ "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
